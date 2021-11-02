@@ -8,8 +8,13 @@ I will try to add a default value to the NaN values. Instead of a NaN. This avoi
 ### 3. How would you architect your solution as a production service wherein new facilities can be introduced at arbitrary points in time. Assume these facilities become available by the finance team emailing your team and describing the addition with a new set of CSVs.
 The provided solution could easily be able to handle more facilties because the covenant data is merged with facilites data for analysis. Due to this merging if there exists a covenant for a facility it will be used for analysis before assigning a loan
 ### 4. Your solution most likely simulates the streaming process by directly calling a method in your code to process the loans inside of a for loop. What would a REST API look like for this same service? Stakeholders using the API will need, at a minimum, to be able to request a loan be assigned to a facility, and read the funding status of a loan, as well as query the capacities remaining in facilities.
+REST API for this service would require only on parameter < LoanId >. The service will return the status of the funding. 
 
 ### 5. How might you improve your assignment algorithm if you were permitted to assign loans in batch rather than streaming? We are not looking for code here, but pseudo code or description of a revised algorithm appreciated.
+
+If loans are provided in batch instead of streaming. The implementation might look somewhat different. The runtime complexity may increase depending on the size of the batches. 
+The comparison steps may be modified in my current code. matching the highest interest rate the first opportunity to match with the facility with lowest interst rate. making comparison this way will greatly improve the expected yield. 
+this is a open ended question and it needs more exploration on the data side. 
 
 ### 6. Discuss your solution’s runtime complexity.
 I have used a nested loop to process the two dataFrames this gives a complexity of O(n^2). I am aware this is not a optimal solution in realtime. I need more time to look into optimizing this code to run faster than the current way it is programmed. 
