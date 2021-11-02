@@ -10,4 +10,6 @@ The provided solution could easily be able to handle more facilties because the 
 ### 4. Your solution most likely simulates the streaming process by directly calling a method in your code to process the loans inside of a for loop. What would a REST API look like for this same service? Stakeholders using the API will need, at a minimum, to be able to request a loan be assigned to a facility, and read the funding status of a loan, as well as query the capacities remaining in facilities.
 
 ### 5. How might you improve your assignment algorithm if you were permitted to assign loans in batch rather than streaming? We are not looking for code here, but pseudo code or description of a revised algorithm appreciated.
+
 ### 6. Discuss your solution’s runtime complexity.
+I have used a nested loop to process the two dataFrames this gives a complexity of O(n^2). I am aware this is not a optimal solution in realtime. I need more time to look into optimizing this code to run faster than the current way it is programmed. 
